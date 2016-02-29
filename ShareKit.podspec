@@ -148,7 +148,7 @@ evernote.xcconfig = { 'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2' 
   
   s.subspec 'Pinterest' do |pinterest|
     pinterest.source_files = 'Classes/ShareKit/Sharers/Services/Pinterest/**/*.{h,m}'
-    pinterest.dependency 'PinterestSDK'
+    pocket.dependency 'PinterestSDK', :git => 'git@github.com:pinterest/ios-pdk.git'
     pinterest.dependency 'ShareKit/Core'
   end
   

@@ -31,12 +31,12 @@ Pod::Spec.new do |s|
     reachability.requires_arc = false
   end
 
-s.subspec 'Evernote' do |evernote|
+  s.subspec 'Evernote' do |evernote|
     evernote.source_files = 'Classes/ShareKit/Sharers/Services/Evernote/**/*.{h,m}'
     evernote.dependency 'Evernote-SDK-iOS', '~> 1.3.1'
     evernote.dependency 'ShareKit/Core'
     evernote.libraries = 'xml2'
-evernote.xcconfig = { 'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2' }
+  evernote.xcconfig = { 'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2' }
   end
 
   s.subspec 'Facebook' do |facebook|
@@ -147,8 +147,7 @@ evernote.xcconfig = { 'HEADER_SEARCH_PATHS' => '$(SDKROOT)/usr/include/libxml2' 
   end
   
   s.subspec 'Pinterest' do |pinterest|
-    pinterest.source_files = 'Classes/ShareKit/Sharers/Services/Pinterest/**/*.{h,m}'
-    pocket.dependency 'PinterestSDK', :git => 'git@github.com:pinterest/ios-pdk.git'
+    pinterest.source_files = 'Classes/ShareKit/Sharers/Services/Pinterest/**/*.{h,m}', 'Submodules/ios-pdk/Pod/Classes/**/*.{h,m}'
     pinterest.dependency 'ShareKit/Core'
   end
   
